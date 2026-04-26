@@ -48,7 +48,7 @@ function setStatus(msg, isError = false, isOk = false) {
 
 function parseAntennaSpecs(text) {
   const result = {};
-  const lines = text.split(/\r?\n/);
+  const lines = text.split(/\r\n|\n|\r/);
 
   let currentName = null;
   let currentBlock = [];
@@ -251,7 +251,7 @@ function renderRadomeDimensions(antenna) {
 
 function formatAngle(v) {
   if (!Number.isFinite(v)) return "—";
-  return `${v:g}°`.replace(":g", formatNumber(v));
+  return `${formatNumber(v)}°`;
 }
 
 function formatNumber(v) {
