@@ -1,6 +1,8 @@
 const antennaSpecsFile =
   "https://ed94120.github.io/antenna-pattern-tool/data/antenna-specs.txt";
 
+const defaultAntennaName = "Huawei_AOC4518R30V06";
+
 let antennaData = {};
 
 window.onload = init;
@@ -180,6 +182,12 @@ function populateAntennaList() {
     opt.value = name;
     opt.textContent = name;
     select.appendChild(opt);
+  }
+
+  if (antennaData[defaultAntennaName]) {
+    select.value = defaultAntennaName;
+  } else if (select.options.length > 0) {
+    select.selectedIndex = 0;
   }
 }
 
