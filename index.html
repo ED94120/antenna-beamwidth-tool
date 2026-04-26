@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antenna Beamwidth Tool</title>
 
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <section class="panel">
+      <header class="header">
+        <h1>Antenna Beamwidth Tool</h1>
+        <p>Ouvertures à 3 dB et dimensions du radôme</p>
+      </header>
+
+      <div class="field">
+        <label for="antennaSelect">Antenne</label>
+        <select id="antennaSelect"></select>
+      </div>
+
+      <div id="status" class="status">Chargement…</div>
+
+      <section id="resultCard" class="resultCard hidden">
+        <h2 id="antennaName">—</h2>
+
+        <div class="infoLine">
+          <span class="label">Type</span>
+          <span id="antennaType">—</span>
+        </div>
+
+        <h3>Ouvertures à 3 dB</h3>
+
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Bande</th>
+                <th>Azimut</th>
+                <th>Élévation</th>
+              </tr>
+            </thead>
+            <tbody id="beamwidthTableBody"></tbody>
+          </table>
+        </div>
+
+        <h3>Dimensions du radôme</h3>
+
+        <div class="dimensions">
+          <div>
+            <span class="label">Longueur</span>
+            <span id="radomeLength">—</span>
+          </div>
+          <div>
+            <span class="label">Largeur</span>
+            <span id="radomeWidth">—</span>
+          </div>
+          <div>
+            <span class="label">Épaisseur</span>
+            <span id="radomeDepth">—</span>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/antenna-beamwidth-tool.js"></script>
+</body>
+</html>
